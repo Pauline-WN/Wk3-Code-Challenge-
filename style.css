@@ -1,0 +1,117 @@
+/* Color Palette */
+:root {
+    --primary-color: #FFB6C1; /* Light Pink */
+    --secondary-color: #FFE4E1; /* Misty Rose */
+    --text-color: #333; /* Dark Grey */
+    --button-color: #FF69B4; /* Hot Pink */
+    --button-text-color: #FFF; /* White */
+    --background-color: #FFF0F5; /* Lavender Blush */
+    --header-color: #DB7093; /* Pale Violet Red */
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header {
+    background-color: var(--header-color);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.movies-list {
+    width: 30%;
+    padding: 10px;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.details {
+    width: 60%;
+    padding: 10px;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+h3 {
+    margin-top: 0;
+}
+
+#films {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.film-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.film-item:hover {
+    background-color: var(--primary-color);
+}
+
+.film-item img {
+    width: 100%;
+    max-width: 80px; /* Adjust the max-width to make the image smaller */
+    height: auto;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.film-title {
+    font-size: 16px;
+    flex: 1;
+}
+
+.details img {
+    width: 100%;
+    max-width: 150px; /* Adjust the max-width to make the image smaller */
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+#buy-ticket-btn {
+    background-color: var(--button-color);
+    color: var(--button-text-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#buy-ticket-btn:hover {
+    background-color: var(--header-color);
+}
+
+#buy-ticket-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}

@@ -3,9 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Flatdango</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <header>
+        <h1>Flatdango Movie Theater</h1>
+        <h2>Book Your Tickets Now!</h2>
+    </header>
+    <div class="container">
+        <aside class="movies-list">
+            <h3>Recommended Movies</h3>
+            <ul id="films">
+                <!-- Movie list will be populated dynamically -->
+            </ul>
+        </aside>
+        <main class="details">
+            <h3 id="movie-title">Premiere</h3>
+            <img id="movie-poster" src="" alt="Movie Poster">
+            <p>Runtime: <span id="movie-runtime"></span> minutes</p>
+            <p>Showtime: <span id="movie-showtime"></span></p>
+            <p id="movie-description">Description</p>
+            <p>Available Tickets: <span id="movie-available-tickets"></span></p>
+            <button id="buy-ticket-btn">Buy Ticket</button>
+        </main>
+    </div>
+    <script src="index.js"></script>
 </body>
 </html>
