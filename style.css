@@ -1,12 +1,11 @@
-/* Color Palette */
 :root {
-    --primary-color: #FFB6C1; /* Light Pink */
-    --secondary-color: #FFE4E1; /* Misty Rose */
-    --text-color: #333; /* Dark Grey */
-    --button-color: #FF69B4; /* Hot Pink */
-    --button-text-color: #FFF; /* White */
-    --background-color: #FFF0F5; /* Lavender Blush */
-    --header-color: #DB7093; /* Pale Violet Red */
+    --primary-color: LightPink;
+    --secondary-color: MistyRose;
+    --text-color: rgb(8, 8, 8);
+    --button-color: HotPink;
+    --button-text-color: White;
+    --background-color: LavenderBlush;
+    --header-color: PaleVioletRed;
 }
 
 body {
@@ -30,28 +29,97 @@ header {
     justify-content: space-between;
 }
 
-.movies-list {
-    width: 30%;
-    padding: 10px;
+.movies-list,
+.details {
     background-color: var(--secondary-color);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    justify-content: center; 
+    padding-left: 40px;
+    gap: 20px; 
+    
+}
+
+.movies-list {
+    width: 30%;
+    padding-right: 40px;
 }
 
 .details {
     width: 60%;
-    padding: 10px;
-    background-color: var(--secondary-color);
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    padding-left: 40px;
+    justify-content: center; 
 }
 
-h1, h2 {
-    margin: 0;
+
+.details h3 {
+    font-size:40px; 
+    font-weight: bold; 
+}
+
+.details p {
+    font-size: 20px; 
+}
+
+@keyframes colorChange {
+    0% {
+        color: Black;
+    }
+    50% {
+        color: HotPink;
+    }
+    100% {
+        color: Black;
+    }
+}
+
+.details h3, .details p {
+    animation: colorChange 3s ease-in-out infinite;
+}
+
+h1 {
+    margin-bottom: 20px; 
+    font-size: 60px; 
+    font-weight: bold;
+}
+
+h2 {
+    margin-top: 10px; 
+    margin-bottom: 10px; 
+}
+@keyframes celebrateH2 {
+    0% {
+        transform: scale(1) translateY(0);
+        color: Black; 
+    }
+    25% {
+        transform: scale(1.1) translateY(-10px);
+        color: White; 
+    }
+    50% {
+        transform: scale(1) translateY(0);
+        color: Yellow; 
+    }
+    75% {
+        transform: scale(1.1) translateY(-10px);
+        color: White; 
+    }
+    100% {
+        transform: scale(1) translateY(0);
+        color: Black;
+    }
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: bold;
+    animation: celebrateH2 2s infinite; 
 }
 
 h3 {
     margin-top: 0;
+    font-size: 30px;
 }
 
 #films {
@@ -76,25 +144,61 @@ h3 {
 
 .film-item img {
     width: 100%;
-    max-width: 80px; /* Adjust the max-width to make the image smaller */
+    max-width: 80px;
     height: auto;
     border-radius: 5px;
     margin-right: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.film-item img:hover {
+    transform: scale(2.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .film-title {
-    font-size: 16px;
+    font-size: 20px;
     flex: 1;
+    padding-left: 35px;
+}
+
+.details {
+    position: relative; 
+    padding: 10px; 
+}
+
+@keyframes flipAndZoom {
+    0% {
+        transform: scale(1) rotateY(0deg);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2) rotateY(180deg);
+        opacity: 0.9;
+    }
+    100% {
+        transform: scale(1) rotateY(360deg);
+        opacity: 1;
+    }
 }
 
 .details img {
     width: 100%;
-    max-width: 150px; /* Adjust the max-width to make the image smaller */
+    max-width: 600px; 
     height: auto;
     object-fit: cover;
     border-radius: 10px;
-    margin-bottom: 10px;
+    padding-top: 10px; 
+    padding-bottom: 20px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 1; 
+    position: relative; 
 }
+
+.details img:hover {
+    animation: flipAndZoom 2s ease-in-out;
+}
+
 
 #buy-ticket-btn {
     background-color: var(--button-color);
@@ -112,6 +216,7 @@ h3 {
 }
 
 #buy-ticket-btn:disabled {
-    background-color: #ccc;
+    background-color: LightGray;
     cursor: not-allowed;
 }
+
